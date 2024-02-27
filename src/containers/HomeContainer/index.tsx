@@ -12,7 +12,6 @@ import {
 import {
     Colors,
     DebugInstructions,
-    LearnMoreLinks,
     ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
@@ -55,7 +54,6 @@ const HomeContainer: React.FC<HomeScreenProps> = (props) => {
                 <Section title="Learn More">
                     Read the docs to discover what to do next:
                 </Section>
-                <LearnMoreLinks />
             </View>
         </ScrollView>
     );
