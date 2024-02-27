@@ -16,6 +16,10 @@ const styles = StyleSheet.create({
         marginTop: 32,
         paddingHorizontal: 24,
     },
+    headerButton: {
+        backgroundColor: "#f4511e",
+        alignItems: "center",
+    },
     button: {
         backgroundColor: "#f4511e",
         paddingVertical: 20,
