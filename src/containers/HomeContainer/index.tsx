@@ -4,8 +4,7 @@ import {
     ScrollView,
     Text,
     View,
-    StyleSheet,
-    Button,
+    TouchableHighlight,
 } from 'react-native';
 
 import {
@@ -14,6 +13,8 @@ import {
 } from 'react-native/Libraries/NewAppScreen';
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+
+import styles from '../../styles';
 
 import { ContainersList } from '../ContainersList';
 import Section from './Components/Section';
@@ -24,14 +25,17 @@ const HomeContainer: React.FC<HomeScreenProps> = (props) => {
     return (
         <ScrollView
             contentInsetAdjustmentBehavior="automatic"
-            >
-            <Button
-                title="Go to Map"
+        >
+            <TouchableHighlight
                 onPress={() => props.navigation.navigate('Map')}
-            />
+            >
+                <View style={styles.button}>
+                    <Text style={styles.textBig}>Go to Map</Text>
+                </View>
+            </TouchableHighlight>
             <View>
                 <Section title="Step One">
-                    Edit whenever you do want <Text style={styles.highlight}>App.tsx</Text> to change this
+                    Edit whenever you do want <Text style={styles.textBold}>App.tsx</Text> to change this
                     screen and then come back to see your edits.
                 </Section>
                 <Section title="See Your Changes">
@@ -47,11 +51,5 @@ const HomeContainer: React.FC<HomeScreenProps> = (props) => {
         </ScrollView>
     );
 }
-
-const styles = StyleSheet.create({
-    highlight: {
-        fontWeight: '700',
-    },
-});
 
 export default HomeContainer;

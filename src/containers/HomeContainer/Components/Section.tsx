@@ -3,8 +3,9 @@ import type { PropsWithChildren } from 'react';
 import {
     Text,
     View,
-    StyleSheet,
 } from 'react-native';
+
+import styles from '../../../styles';
 
 type SectionProps = PropsWithChildren<{
     title: string;
@@ -12,37 +13,21 @@ type SectionProps = PropsWithChildren<{
 
 function Section({ children, title }: SectionProps): React.JSX.Element {
     return (
-        <View style={styles.sectionContainer}>
+        <View style={styles.textBox}>
             <Text
                 style={[
-                    styles.sectionTitle,
+                    styles.textBig,
                 ]}>
                 {title}
             </Text>
             <Text
                 style={[
-                    styles.sectionDescription,
+                    styles.text,
                 ]}>
                 {children}
             </Text>
         </View>
     );
 }
-
-const styles = StyleSheet.create({
-    sectionContainer: {
-        marginTop: 32,
-        paddingHorizontal: 24,
-    },
-    sectionTitle: {
-        fontSize: 24,
-        fontWeight: '600',
-    },
-    sectionDescription: {
-        marginTop: 8,
-        fontSize: 18,
-        fontWeight: '400',
-    },
-});
 
 export default Section;
