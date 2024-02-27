@@ -7,12 +7,9 @@ import {
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-export type RootStackParamList = {
-    Home: undefined;
-    Map: undefined;
-};
+import { ContainersList } from '../ContainersList';
 
-type MapScreenProps = NativeStackScreenProps<RootStackParamList, "Map">;
+type MapScreenProps = NativeStackScreenProps<ContainersList, "Map">;
 
 const MapContainer: React.FC<MapScreenProps> = (props) => {
     return (

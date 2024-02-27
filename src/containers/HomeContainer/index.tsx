@@ -18,14 +18,10 @@ import {
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
+import { ContainersList } from '../ContainersList';
 import Section from './Components/Section';
 
-export type RootStackParamList = {
-    Home: undefined;
-    Map: undefined;
-};
-
-type HomeScreenProps = NativeStackScreenProps<RootStackParamList, "Home">;
+type HomeScreenProps = NativeStackScreenProps<ContainersList, "Home">;
 
 const HomeContainer: React.FC<HomeScreenProps> = (props) => {
     const isDarkMode = useColorScheme() === 'dark';
