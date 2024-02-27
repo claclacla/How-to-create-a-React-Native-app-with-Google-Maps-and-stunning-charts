@@ -35,6 +35,7 @@ What things you need to install the software
 
 ```bash
 
+npx react-native start
 
 ```
 
