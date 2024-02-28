@@ -23,12 +23,8 @@ type HomeScreenProps = NativeStackScreenProps<ContainersList, "Home">;
 
 const HomeContainer: React.FC<HomeScreenProps> = (props) => {
     return (
-        <ScrollView
-            contentInsetAdjustmentBehavior="automatic"
-        >
-            <TouchableHighlight
-                onPress={() => props.navigation.navigate('Map')}
-            >
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
+            <TouchableHighlight onPress={() => props.navigation.navigate('Map')}>
                 <View style={styles.button}>
                     <Text style={styles.textBig}>Go to Map</Text>
                 </View>
