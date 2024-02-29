@@ -1,5 +1,6 @@
 node_modules
 android/*
 !android/.gitignore
+!android/app/src/main/AndroidManifest.xml
 ios/*
 !ios/.gitignore
