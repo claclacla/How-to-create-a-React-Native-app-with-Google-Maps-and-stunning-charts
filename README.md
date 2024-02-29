@@ -8,6 +8,13 @@ Would you like to explore the world around you? Would you like to know if the be
 
 Use this amazing React Native application!
 
+For the icons I have installed the package "react-native-ionicons" and I have copied the fonts from the package folder to the folder assets/fonts in the android app folder.
+
+For the splash screen
+
+It requires an old version of JDK. I have used the version 17.
+https://blog.logrocket.com/building-splash-screens-react-native/ 
+
 
 --------------------------------------------------------------------------------
 

@@ -5,7 +5,7 @@
  * @format
  */
 
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -13,6 +13,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { ContainersList } from './src/containers/ContainersList';
 
 import Icon from 'react-native-ionicons';
+import SplashScreen from 'react-native-splash-screen';
 
 import HomeContainer from './src/containers/HomeContainer';
 import MapContainer from './src/containers/MapContainer';
@@ -23,6 +24,10 @@ const Tab = createBottomTabNavigator<ContainersList>();
 // https://ionic.io/ionicons
 
 function App() {
+    useEffect(() => {
+        //SplashScreen.hide();
+    }, []);
+
     return (
         <NavigationContainer>
             <Tab.Navigator
