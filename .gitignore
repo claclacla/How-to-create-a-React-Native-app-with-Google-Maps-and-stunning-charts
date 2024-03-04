@@ -1,6 +1,11 @@
 node_modules
-android/*
-!android/.gitignore
-!android/app/src/main/AndroidManifest.xml
+
+android/.gradle
+android/app/*
+!android/app/build.gradle
+!android/app/src/
+android/build
+android/gradle
+
 ios/*
 !ios/.gitignore

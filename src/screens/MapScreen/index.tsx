@@ -14,7 +14,7 @@ import styles from '../../styles';
 
 type MapScreenProps = NativeStackScreenProps<ContainersList, "Map">;
 
-const MapContainer: React.FC<MapScreenProps> = (props) => {
+const MapScreen: React.FC<MapScreenProps> = (props) => {
     return (
         <View>
             <TouchableHighlight
@@ -29,4 +29,4 @@ const MapContainer: React.FC<MapScreenProps> = (props) => {
     )
 }
 
-export default MapContainer;
+export default MapScreen;

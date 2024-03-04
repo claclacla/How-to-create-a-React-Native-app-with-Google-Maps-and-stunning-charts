@@ -21,7 +21,7 @@ import Section from './Components/Section';
 
 type HomeScreenProps = NativeStackScreenProps<ContainersList, "Home">;
 
-const HomeContainer: React.FC<HomeScreenProps> = (props) => {
+const HomeScreen: React.FC<HomeScreenProps> = (props) => {
     return (
         <ScrollView contentInsetAdjustmentBehavior="automatic">
             <TouchableHighlight onPress={() => props.navigation.navigate('Map')}>
@@ -48,4 +48,4 @@ const HomeContainer: React.FC<HomeScreenProps> = (props) => {
     );
 }
 
-export default HomeContainer;
+export default HomeScreen;

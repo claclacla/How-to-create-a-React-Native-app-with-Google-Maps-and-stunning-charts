@@ -10,13 +10,13 @@ import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { ContainersList } from './src/containers/ContainersList';
+import { ContainersList } from './src/screens/ContainersList';
 
 import Icon from 'react-native-ionicons';
-import SplashScreen from 'react-native-splash-screen';
+//import SplashScreen from 'react-native-splash-screen';
 
-import HomeContainer from './src/containers/HomeContainer';
-import MapContainer from './src/containers/MapContainer';
+import HomeScreen from './src/screens/HomeScreen';
+import MapScreen from './src/screens/MapScreen';
 
 const Tab = createBottomTabNavigator<ContainersList>();
 
@@ -41,15 +41,14 @@ function App() {
                             iconName = focused ? 'list' : 'list';
                         }
 
-                        // You can return any component that you like here!
                         return <Icon name={iconName} size={size} color={color} />;
                     },
                     tabBarActiveTintColor: 'tomato',
                     tabBarInactiveTintColor: 'gray',
                 })}
             >
-                <Tab.Screen name="Home" component={HomeContainer} />
-                <Tab.Screen name="Map" component={MapContainer} />
+                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Map" component={MapScreen} />
             </Tab.Navigator>
         </NavigationContainer>
     );
