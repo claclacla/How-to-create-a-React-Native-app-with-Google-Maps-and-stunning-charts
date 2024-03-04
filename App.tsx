@@ -10,11 +10,12 @@ import React, { useEffect } from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-//import { ContainersList } from './src/screens/ContainersList';
+import { ApplicationScreensList } from './src/screens/ApplicationScreensList';
 
+import AuthenticationScreen from './src/screens/AuthenticationScreen';
 import NavigationScreen from './src/screens/NavigationScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<ApplicationScreensList>();
 
 // For the icons list:
 // https://ionic.io/ionicons
@@ -27,7 +28,8 @@ function App() {
     return (
         <NavigationContainer>
             <Stack.Navigator screenOptions={{ headerShown: false, }}>
-                <Stack.Screen name="NavigationScreen" component={NavigationScreen} />
+                <Stack.Screen name="Authentication" component={AuthenticationScreen} />
+                <Stack.Screen name="Navigation" component={NavigationScreen} />
             </Stack.Navigator>
         </NavigationContainer>
     );

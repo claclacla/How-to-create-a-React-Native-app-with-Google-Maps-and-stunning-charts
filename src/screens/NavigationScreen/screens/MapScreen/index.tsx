@@ -1,31 +1,31 @@
 import React from 'react';
 
 import {
+    ScrollView,
     View,
     Text,
-    TouchableHighlight,
 } from 'react-native';
 
-import { NativeStackScreenProps } from '@react-navigation/native-stack';
+//import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { NavigationScreensList } from '../../NavigationScreensList';
+//import { NavigationScreensList } from '../../NavigationScreensList';
 
 import styles from '../../../../styles';
+import Section from '../InfoScreen/Components/Section';
 
-type MapScreenProps = NativeStackScreenProps<NavigationScreensList, "Map">;
+//type MapScreenProps = NativeStackScreenProps<NavigationScreensList, "Map">;
 
-const MapScreen: React.FC<MapScreenProps> = (props) => {
+// navigation.navigate('Info')
+
+function MapScreen() {
     return (
-        <View>
-            <TouchableHighlight
-                onPress={() => props.navigation.navigate('Info')}
-            >
-                <View style={styles.button}>
-                    <Text style={styles.textBig}>Go to Info</Text>
-                </View>
-            </TouchableHighlight>
-        </View>
-
+        <ScrollView contentInsetAdjustmentBehavior="automatic">
+            <View>
+                <Section title="Go to Info">
+                    The Map text
+                </Section>
+            </View>
+        </ScrollView>
     )
 }
 
