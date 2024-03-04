@@ -14,12 +14,12 @@ import {
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import styles from '../../styles';
+import styles from '../../../../styles';
 
-import { ContainersList } from '../ContainersList';
+import { NavigationScreensList } from '../../NavigationScreensList';
 import Section from './Components/Section';
 
-type InfoScreenProps = NativeStackScreenProps<ContainersList, "Info">;
+type InfoScreenProps = NativeStackScreenProps<NavigationScreensList, "Info">;
 
 const InfoScreen: React.FC<InfoScreenProps> = (props) => {
     return (

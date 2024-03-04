@@ -8,11 +8,11 @@ import {
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-import { ContainersList } from '../ContainersList';
+import { NavigationScreensList } from '../../NavigationScreensList';
 
-import styles from '../../styles';
+import styles from '../../../../styles';
 
-type MapScreenProps = NativeStackScreenProps<ContainersList, "Map">;
+type MapScreenProps = NativeStackScreenProps<NavigationScreensList, "Map">;
 
 const MapScreen: React.FC<MapScreenProps> = (props) => {
     return (

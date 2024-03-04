@@ -8,17 +8,13 @@
 import React, { useEffect } from 'react';
 
 import { NavigationContainer } from '@react-navigation/native';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { ContainersList } from './src/screens/ContainersList';
+//import { ContainersList } from './src/screens/ContainersList';
 
-import Icon from 'react-native-ionicons';
-//import SplashScreen from 'react-native-splash-screen';
+import NavigationScreen from './src/screens/NavigationScreen';
 
-import InfoScreen from './src/screens/InfoScreen';
-import MapScreen from './src/screens/MapScreen';
-
-const Tab = createBottomTabNavigator<ContainersList>();
+const Stack = createNativeStackNavigator();
 
 // For the icons list:
 // https://ionic.io/ionicons
@@ -30,26 +26,9 @@ function App() {
 
     return (
         <NavigationContainer>
-            <Tab.Navigator
-                screenOptions={({ route }) => ({
-                    tabBarIcon: ({ focused, color, size }) => {
-                        let iconName: string = "";
-
-                        if (route.name === 'Info') {
-                            iconName = focused ? 'apps' : 'apps';
-                        } else if (route.name === 'Map') {
-                            iconName = focused ? 'list' : 'list';
-                        }
-
-                        return <Icon name={iconName} size={size} color={color} />;
-                    },
-                    tabBarActiveTintColor: 'tomato',
-                    tabBarInactiveTintColor: 'gray',
-                })}
-            >
-                <Tab.Screen name="Info" component={InfoScreen} />
-                <Tab.Screen name="Map" component={MapScreen} />
-            </Tab.Navigator>
+            <Stack.Navigator screenOptions={{ headerShown: false, }}>
+                <Stack.Screen name="NavigationScreen" component={NavigationScreen} />
+            </Stack.Navigator>
         </NavigationContainer>
     );
 }
