@@ -15,7 +15,7 @@ import { ContainersList } from './src/screens/ContainersList';
 import Icon from 'react-native-ionicons';
 //import SplashScreen from 'react-native-splash-screen';
 
-import HomeScreen from './src/screens/HomeScreen';
+import InfoScreen from './src/screens/InfoScreen';
 import MapScreen from './src/screens/MapScreen';
 
 const Tab = createBottomTabNavigator<ContainersList>();
@@ -35,7 +35,7 @@ function App() {
                     tabBarIcon: ({ focused, color, size }) => {
                         let iconName: string = "";
 
-                        if (route.name === 'Home') {
+                        if (route.name === 'Info') {
                             iconName = focused ? 'apps' : 'apps';
                         } else if (route.name === 'Map') {
                             iconName = focused ? 'list' : 'list';
@@ -47,7 +47,7 @@ function App() {
                     tabBarInactiveTintColor: 'gray',
                 })}
             >
-                <Tab.Screen name="Home" component={HomeScreen} />
+                <Tab.Screen name="Info" component={InfoScreen} />
                 <Tab.Screen name="Map" component={MapScreen} />
             </Tab.Navigator>
         </NavigationContainer>

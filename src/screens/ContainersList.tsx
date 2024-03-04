@@ -1,4 +1,4 @@
 export type ContainersList = {
-    Home: undefined;
+    Info: undefined;
     Map: undefined;
 };

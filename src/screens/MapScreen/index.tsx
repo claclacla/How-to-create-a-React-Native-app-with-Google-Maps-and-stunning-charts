@@ -18,10 +18,10 @@ const MapScreen: React.FC<MapScreenProps> = (props) => {
     return (
         <View>
             <TouchableHighlight
-                onPress={() => props.navigation.navigate('Home')}
+                onPress={() => props.navigation.navigate('Info')}
             >
                 <View style={styles.button}>
-                    <Text style={styles.textBig}>Go to Home</Text>
+                    <Text style={styles.textBig}>Go to Info</Text>
                 </View>
             </TouchableHighlight>
         </View>
