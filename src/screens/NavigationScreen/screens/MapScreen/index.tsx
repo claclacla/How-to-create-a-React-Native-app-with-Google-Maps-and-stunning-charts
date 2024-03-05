@@ -1,28 +1,48 @@
 import React from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 
 import {
     ScrollView,
     View,
+    TouchableHighlight,
     Text,
 } from 'react-native';
 
-//import { NativeStackScreenProps } from '@react-navigation/native-stack';
+import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
-//import { NavigationScreensList } from '../../NavigationScreensList';
+import { NavigationScreensList } from '../../NavigationScreensList';
+
+import { IAuthentication, setKey } from '../../../../reducers/authentication';
 
 import styles from '../../../../styles';
 import Section from '../InfoScreen/Components/Section';
 
-//type MapScreenProps = NativeStackScreenProps<NavigationScreensList, "Map">;
+interface IGlobalState {
+    authentication: IAuthentication;
+}
 
-// navigation.navigate('Info')
+type MapScreenProps = NativeStackScreenProps<NavigationScreensList, "Map">;
 
-function MapScreen() {
+const MapScreen: React.FC<MapScreenProps> = (props) => {
+    const key = useSelector((state: IGlobalState) => state.authentication.key);
+    const dispatch = useDispatch();
+
+    // props.navigation.navigate('Info')
+
     return (
         <ScrollView contentInsetAdjustmentBehavior="automatic">
             <View>
-                <Section title="Go to Info">
-                    The Map text
+                <Section title="Description">
+                    The key: {key}
+                </Section>
+                <Section title="Button">
+                    <TouchableHighlight
+                        onPress={() => dispatch(setKey("key"))}
+                    >
+                        <View style={styles.button}>
+                            <Text style={styles.textBig}>Go to Info</Text>
+                        </View>
+                    </TouchableHighlight>
                 </Section>
             </View>
         </ScrollView>
