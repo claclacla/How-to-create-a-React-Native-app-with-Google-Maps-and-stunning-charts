@@ -14,11 +14,19 @@ import styles from '../../styles';
 
 type AuthenticationScreenProps = NativeStackScreenProps<ApplicationScreensList, "Authentication">;
 
+/*
+
+!!! PAY ATTENTION !!!
+
+Without setting the authentication key, the Main screen is unreachable
+
+*/
+
 const AuthenticationScreen: React.FC<AuthenticationScreenProps> = (props) => {
     return (
         <View>
             <TouchableHighlight
-                onPress={() => props.navigation.navigate('Navigation')}
+                onPress={() => props.navigation.navigate('Main')}
             >
                 <View style={styles.button}>
                     <Text style={styles.textBig}>Go to Navigation</Text>

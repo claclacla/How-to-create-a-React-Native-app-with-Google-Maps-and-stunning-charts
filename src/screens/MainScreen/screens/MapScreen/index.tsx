@@ -1,5 +1,5 @@
 import React from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
 import {
     ScrollView,
@@ -12,7 +12,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { MainScreensList } from '../../MainScreensList';
 
-import { unsetKey } from '../../../../reducers/authentication';
+import { unsetKey } from '../../../../repositories/redux/authentication';
 
 import styles from '../../../../styles';
 import Section from '../InfoScreen/Components/Section';

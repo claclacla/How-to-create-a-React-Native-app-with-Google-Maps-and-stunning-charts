@@ -1,16 +1,5 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- */
-
 import React, { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-
-import { configureStore } from '@reduxjs/toolkit';
-
-import authenticationReducer from "../reducers/authentication";
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
@@ -20,15 +9,9 @@ import { ApplicationScreensList } from '../screens/ApplicationScreensList';
 import AuthenticationScreen from '../screens/AuthenticationScreen';
 import MainScreen from '../screens/MainScreen';
 
-import { IAuthentication } from '../reducers/authentication';
+import { IAuthentication } from '../repositories/redux/authentication';
 
 const Stack = createNativeStackNavigator<ApplicationScreensList>();
-
-const store = configureStore({
-    reducer: {
-        authentication: authenticationReducer,
-    }
-})
 
 interface IGlobalState {
     authentication: IAuthentication;
@@ -38,8 +21,7 @@ interface IGlobalState {
 // https://ionic.io/ionicons
 
 function NavigationComponent() {
-    const key = useSelector((state: IGlobalState) => state.authentication.key);
-    const isLogged: boolean = !(key == "");
+    const isLogged = useSelector((state: IGlobalState) => state.authentication.isLogged);
 
     useEffect(() => {
         //SplashScreen.hide();
