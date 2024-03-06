@@ -5,7 +5,7 @@ export interface IAuthentication {
 }
 
 const authentication: IAuthentication = {
-    key: "",
+    key: "key",
 };
 
 const authenticationSlice = createSlice({

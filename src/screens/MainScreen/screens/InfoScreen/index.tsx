@@ -11,16 +11,9 @@ import {
     ReloadInstructions,
 } from 'react-native/Libraries/NewAppScreen';
 
-//import { NativeStackScreenProps } from '@react-navigation/native-stack';
-
 import styles from '../../../../styles';
 
-//import { NavigationScreensList } from '../../NavigationScreensList';
 import Section from './Components/Section';
-
-//type InfoScreenProps = NativeStackScreenProps<NavigationScreensList, "Info">;
-
-// navigation.navigate('Map')
 
 function InfoScreen() {
     return (

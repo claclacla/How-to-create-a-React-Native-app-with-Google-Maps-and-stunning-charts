@@ -1,4 +1,4 @@
-export type NavigationScreensList = {
+export type MainScreensList = {
     Info: undefined;
     Map: undefined;
 };

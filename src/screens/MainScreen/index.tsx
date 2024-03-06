@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { NavigationScreensList } from './NavigationScreensList';
+import { MainScreensList } from './MainScreensList';
 
 import Icon from 'react-native-ionicons';
 //import SplashScreen from 'react-native-splash-screen';
@@ -10,7 +10,7 @@ import Icon from 'react-native-ionicons';
 import InfoScreen from './screens/InfoScreen';
 import MapScreen from './screens/MapScreen';
 
-const Tab = createBottomTabNavigator<NavigationScreensList>();
+const Tab = createBottomTabNavigator<MainScreensList>();
 
 // For the icons list:
 // https://ionic.io/ionicons
