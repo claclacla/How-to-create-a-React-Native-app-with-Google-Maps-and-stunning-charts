@@ -1,5 +1,9 @@
 import React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
+
+import { StyleSheet } from 'react-native';
+
+import MapView from 'react-native-maps';
 
 import {
     ScrollView,
@@ -36,9 +40,36 @@ const MapScreen: React.FC<MapScreenProps> = (props) => {
                         </View>
                     </TouchableHighlight>
                 </Section>
+                <Section title="Map">
+                    <View style={mapStyles.container}>
+                        <MapView
+                            style={mapStyles.map}
+                            region={{
+                                latitude: 37.78825,
+                                longitude: -122.4324,
+                                latitudeDelta: 0.015,
+                                longitudeDelta: 0.0121,
+                            }}
+                        >
+                        </MapView>
+                    </View>
+                </Section>
             </View>
         </ScrollView>
     )
 }
+
+const mapStyles = StyleSheet.create({
+    container: {
+        ...StyleSheet.absoluteFillObject,
+        height: 400,
+        width: 400,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
+    map: {
+        ...StyleSheet.absoluteFillObject,
+    },
+});
 
 export default MapScreen;

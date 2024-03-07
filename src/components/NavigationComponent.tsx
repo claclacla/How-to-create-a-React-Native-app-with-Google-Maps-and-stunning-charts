@@ -21,7 +21,7 @@ interface IGlobalState {
 // https://ionic.io/ionicons
 
 function NavigationComponent() {
-    const isLogged = useSelector((state: IGlobalState) => state.authentication.isLogged);
+    const isLogged: boolean = true; //useSelector((state: IGlobalState) => state.authentication.isLogged);
 
     useEffect(() => {
         //SplashScreen.hide();
