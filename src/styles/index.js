@@ -25,6 +25,16 @@ const styles = StyleSheet.create({
         paddingVertical: 20,
         alignItems: "center",
     },
+    mapContainer: {
+        ...StyleSheet.absoluteFillObject,
+        height: 400,
+        width: 300,
+        justifyContent: 'flex-end',
+        alignItems: 'center',
+    },
+    map: {
+        ...StyleSheet.absoluteFillObject,
+    },
 });
 
 export default styles;
