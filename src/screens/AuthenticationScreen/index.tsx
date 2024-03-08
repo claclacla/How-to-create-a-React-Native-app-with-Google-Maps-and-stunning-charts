@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
 
 import {
     View,
@@ -7,6 +8,8 @@ import {
 } from 'react-native';
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
+
+import { setLocalStorageKey } from '../../repositories/localStorage/authentication';
 
 import { ApplicationScreensList } from '../ApplicationScreensList';
 
@@ -20,19 +23,23 @@ type AuthenticationScreenProps = NativeStackScreenProps<ApplicationScreensList, 
 
 Without setting the authentication key, the Main screen is unreachable
 
+props.navigation.navigate('Main');
+
 */
 
 const AuthenticationScreen: React.FC<AuthenticationScreenProps> = (props) => {
+    const dispatch = useDispatch();
+
     return (
         <View>
             <TouchableHighlight
-                onPress={() => props.navigation.navigate('Main')}
+                onPress={() => dispatch(setLocalStorageKey("key"))}
             >
                 <View style={styles.button}>
                     <Text style={styles.textBig}>Go to Navigation</Text>
                 </View>
             </TouchableHighlight>
-        </View>
+        </View >
 
     )
 }

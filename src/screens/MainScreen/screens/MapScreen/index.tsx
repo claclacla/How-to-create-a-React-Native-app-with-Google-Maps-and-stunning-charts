@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
 
 import MapView, { Marker } from 'react-native-maps';
 
@@ -19,8 +18,6 @@ import { MainScreensList } from '../../MainScreensList';
 import { IAPILocation, getAPILocations } from '../../../../repositories/api/locations';
 import { ILocalStorageLocation } from '../../../../repositories/localStorage/locations';
 import { mapAPILocationToLocalStorage } from '../../../../repositories/mapAPIToLocalStorage/mapAPILocationToLocalStorage';
-
-import { unsetLocalStorageKey } from '../../../../repositories/localStorage/authentication';
 
 import styles from '../../../../styles';
 import Section from '../InfoScreen/Components/Section';
@@ -44,8 +41,6 @@ async function getLocalStorageLocations(): Promise<ILocalStorageLocation[]> {
 }
 
 const MapScreen: React.FC<MapScreenProps> = (props) => {
-    const dispatch = useDispatch();
-
     const [locations, setLocations] = useState<ILocalStorageLocation[]>([]);
 
     useEffect(() => {
@@ -59,15 +54,6 @@ const MapScreen: React.FC<MapScreenProps> = (props) => {
     return (
         <ScrollView contentInsetAdjustmentBehavior="automatic">
             <View>
-                <Section title="Button">
-                    <TouchableHighlight
-                        onPress={() => dispatch(unsetLocalStorageKey())}
-                    >
-                        <View style={styles.button}>
-                            <Text style={styles.textBig}>Go to Info</Text>
-                        </View>
-                    </TouchableHighlight>
-                </Section>
                 <Section title="Map">
                     <View style={styles.mapContainer}>
                         <MapView
