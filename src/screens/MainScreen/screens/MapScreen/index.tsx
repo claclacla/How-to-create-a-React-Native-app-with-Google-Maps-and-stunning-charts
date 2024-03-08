@@ -5,8 +5,8 @@ import MapView, { Marker } from 'react-native-maps';
 import {
     ScrollView,
     View,
-    TouchableHighlight,
     Text,
+    TouchableWithoutFeedback
 } from 'react-native';
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
@@ -21,6 +21,17 @@ import { mapAPILocationToLocalStorage } from '../../../../repositories/mapAPIToL
 
 import styles from '../../../../styles';
 import Section from '../InfoScreen/Components/Section';
+
+/*
+import { StyleSheet } from 'react-native';
+
+const localStyles = StyleSheet.create({
+    horizontalContainer: {
+        flex: 1, // Allow container to fill available space
+        flexDirection: 'row', // Arrange children horizontally
+    },
+});
+*/
 
 type MapScreenProps = NativeStackScreenProps<MainScreensList, "Map">;
 
@@ -52,73 +63,76 @@ const MapScreen: React.FC<MapScreenProps> = (props) => {
     }, []);
 
     return (
-        <ScrollView contentInsetAdjustmentBehavior="automatic">
-            <View>
-                <Section title="Map">
-                    <View style={styles.mapContainer}>
-                        <MapView
-                            style={styles.map}
-                            region={{
-                                latitude: 41.90,
-                                longitude: 12.49,
-                                latitudeDelta: 10,
-                                longitudeDelta: 5,
-                            }}
-                        >
-                            {locations.map((location, index) => (
-                                <Marker
-                                    key={index}
-                                    coordinate={{
-                                        latitude: location.latitude,
-                                        longitude: location.longitude
-                                    }}
-                                    title={location.name}
-                                />
-                            ))}
-                        </MapView>
-                    </View>
-                </Section>
-                <Section title="Vertical chart">
-                    <View>
-                        <VictoryChart width={350} theme={VictoryTheme.material}>
-                            <VictoryBar data={mainData} x="quarter" y="earnings" />
-                        </VictoryChart>
-                    </View>
-                </Section>
-                <Section title="Pie">
-                    <View>
-                        <VictoryPie
+        <ScrollView>
+            <Section title="Map">
+                <View style={styles.mapContainer}>
+                    <MapView
+                        style={styles.map}
+                        region={{
+                            latitude: 41.90,
+                            longitude: 12.49,
+                            latitudeDelta: 10,
+                            longitudeDelta: 5,
+                        }}
+                    >
+                        {locations.map((location, index) => (
+                            <Marker
+                                key={index}
+                                coordinate={{
+                                    latitude: location.latitude,
+                                    longitude: location.longitude
+                                }}
+                                title={location.name}
+                            />
+                        ))}
+                    </MapView>
+                </View>
+            </Section>
+            <Section title="Vertical chart">
+                <View>
+                    <VictoryChart width={350} theme={VictoryTheme.material}>
+                        <VictoryBar data={mainData} x="quarter" y="earnings" />
+                    </VictoryChart>
+                </View>
+            </Section>
+            <Section title="Pie">
+                <View>
+                    <VictoryPie
+                        data={[
+                            { x: "Cats", y: 35 },
+                            { x: "Dogs", y: 40 },
+                            { x: "Birds", y: 55 }
+                        ]}
+                    />
+                </View>
+            </Section>
+            <Section title="Horizontal chart">
+                <View>
+                    <VictoryChart horizontal width={350} theme={VictoryTheme.material}>
+                        <VictoryBar data={mainData} x="quarter" y="earnings" />
+                    </VictoryChart>
+                </View>
+            </Section>
+            <TouchableWithoutFeedback>
+                <ScrollView horizontal={true}>
+                    <VictoryChart width={1000}>
+                        <VictoryLine
                             data={[
-                                { x: "Cats", y: 35 },
-                                { x: "Dogs", y: 40 },
-                                { x: "Birds", y: 55 }
+                                { x: 1, y: 2 },
+                                { x: 2, y: 3 },
+                                { x: 3, y: 5 },
+                                { x: 4, y: 4 },
+                                { x: 5, y: 6 },
+                                { x: 7, y: 2 },
+                                { x: 8, y: 3 },
+                                { x: 10, y: 5 },
+                                { x: 15, y: 4 },
+                                { x: 16, y: 2 }
                             ]}
                         />
-                    </View>
-                </Section>
-                <Section title="Horizontal chart">
-                    <View>
-                        <VictoryChart horizontal width={350} theme={VictoryTheme.material}>
-                            <VictoryBar data={mainData} x="quarter" y="earnings" />
-                        </VictoryChart>
-                    </View>
-                </Section>
-                <Section title="Line chart">
-                    <View>
-                        <VictoryChart>
-                            <VictoryLine
-                                data={[
-                                    { x: 1, y: 2 },
-                                    { x: 2, y: 3 },
-                                    { x: 3, y: 5 },
-                                    { x: 4, y: 4 },
-                                    { x: 5, y: 6 }
-                                ]}
-                            />
-                        </VictoryChart>
-                    </View>
-                </Section>
-            </View>
+                    </VictoryChart>
+                </ScrollView>
+            </TouchableWithoutFeedback>
         </ScrollView>
     )
 }
