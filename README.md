@@ -21,6 +21,10 @@ https://www.npmjs.com/package/react-native-maps
 https://github.com/react-native-maps/react-native-maps/blob/HEAD/docs/installation.md
 https://github.com/react-native-maps/react-native-maps/blob/HEAD/docs/mapview.md
 
+Charts - Victory charts
+
+https://commerce.nearform.com/open-source/victory/docs/native 
+
 
 --------------------------------------------------------------------------------
 

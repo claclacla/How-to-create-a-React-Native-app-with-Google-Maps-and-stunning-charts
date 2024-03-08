@@ -12,6 +12,8 @@ import {
 
 import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
+import { VictoryBar, VictoryChart, VictoryTheme, VictoryPie, VictoryLine } from 'victory-native';
+
 import { MainScreensList } from '../../MainScreensList';
 
 import { IAPILocation, getAPILocations } from '../../../../repositories/api/locations';
@@ -24,6 +26,13 @@ import styles from '../../../../styles';
 import Section from '../InfoScreen/Components/Section';
 
 type MapScreenProps = NativeStackScreenProps<MainScreensList, "Map">;
+
+const mainData = [
+    { quarter: 1, earnings: 13000 },
+    { quarter: 2, earnings: 16500 },
+    { quarter: 3, earnings: 14250 },
+    { quarter: 4, earnings: 19000 }
+];
 
 async function getLocalStorageLocations(): Promise<ILocalStorageLocation[]> {
     let localStorageLocations: ILocalStorageLocation[];
@@ -81,6 +90,46 @@ const MapScreen: React.FC<MapScreenProps> = (props) => {
                                 />
                             ))}
                         </MapView>
+                    </View>
+                </Section>
+                <Section title="Vertical chart">
+                    <View>
+                        <VictoryChart width={350} theme={VictoryTheme.material}>
+                            <VictoryBar data={mainData} x="quarter" y="earnings" />
+                        </VictoryChart>
+                    </View>
+                </Section>
+                <Section title="Pie">
+                    <View>
+                        <VictoryPie
+                            data={[
+                                { x: "Cats", y: 35 },
+                                { x: "Dogs", y: 40 },
+                                { x: "Birds", y: 55 }
+                            ]}
+                        />
+                    </View>
+                </Section>
+                <Section title="Horizontal chart">
+                    <View>
+                        <VictoryChart horizontal width={350} theme={VictoryTheme.material}>
+                            <VictoryBar data={mainData} x="quarter" y="earnings" />
+                        </VictoryChart>
+                    </View>
+                </Section>
+                <Section title="Line chart">
+                    <View>
+                        <VictoryChart>
+                            <VictoryLine
+                                data={[
+                                    { x: 1, y: 2 },
+                                    { x: 2, y: 3 },
+                                    { x: 3, y: 5 },
+                                    { x: 4, y: 4 },
+                                    { x: 5, y: 6 }
+                                ]}
+                            />
+                        </VictoryChart>
                     </View>
                 </Section>
             </View>
