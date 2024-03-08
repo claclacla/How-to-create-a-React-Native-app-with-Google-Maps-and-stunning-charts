@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
 
-import authenticationReducer from "./src/repositories/redux/authentication";
+import authenticationReducer from "./src/repositories/localStorage/authentication";
 
 import NavigationComponent from "./src/components/NavigationComponent";
 

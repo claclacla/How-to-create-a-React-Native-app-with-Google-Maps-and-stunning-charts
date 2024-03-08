@@ -9,12 +9,12 @@ import { ApplicationScreensList } from '../screens/ApplicationScreensList';
 import AuthenticationScreen from '../screens/AuthenticationScreen';
 import MainScreen from '../screens/MainScreen';
 
-import { IAuthentication } from '../repositories/redux/authentication';
+import { ILocalStorageAuthentication } from '../repositories/localStorage/authentication';
 
 const Stack = createNativeStackNavigator<ApplicationScreensList>();
 
 interface IGlobalState {
-    authentication: IAuthentication;
+    authentication: ILocalStorageAuthentication;
 }
 
 // For the icons list:

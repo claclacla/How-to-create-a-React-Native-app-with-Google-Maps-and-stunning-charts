@@ -1,11 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-export interface IAuthentication {
+export interface ILocalStorageAuthentication {
     key: string;
     isLogged: boolean;
 }
 
-const authentication: IAuthentication = {
+const authentication: ILocalStorageAuthentication = {
     key: "",
     isLogged: false
 };
@@ -14,16 +14,16 @@ const authenticationSlice = createSlice({
     name: 'authentication',
     initialState: authentication,
     reducers: {
-        setKey(state, action) {
+        setLocalStorageKey(state, action) {
             state.key = action.payload
             state.isLogged = true
         },
-        unsetKey(state) {
+        unsetLocalStorageKey(state) {
             state.key = ""
             state.isLogged = false
         }
     }
 })
 
-export const { setKey, unsetKey } = authenticationSlice.actions
+export const { setLocalStorageKey, unsetLocalStorageKey } = authenticationSlice.actions
 export default authenticationSlice.reducer
