@@ -11,7 +11,7 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { setLocalStorageKey } from '../../repositories/localStorage/authentication';
 
-import { ApplicationScreensList } from '../ApplicationScreensList';
+import { ApplicationScreensList } from '../../screensList/ApplicationScreensList';
 
 import styles from '../../styles';
 

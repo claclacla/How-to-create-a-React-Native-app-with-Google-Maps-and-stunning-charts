@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
-import { ApplicationScreensList } from '../../screens/ApplicationScreensList';
+import { ApplicationScreensList } from '../../screensList/ApplicationScreensList';
 
 import AuthenticationScreen from '../../screens/AuthenticationScreen';
 import MainScreen from '../../screens/MainScreen';

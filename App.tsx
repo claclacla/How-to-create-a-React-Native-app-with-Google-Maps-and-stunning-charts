@@ -6,7 +6,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import authenticationReducer from "./src/repositories/localStorage/authentication";
 import locationsReducer from "./src/repositories/localStorage/locations";
 
-import NavigationComponent from "./src/components/NavigationComponent/NavigationComponent";
+import NavigationComponent from "./src/components/NavigationComponent";
 
 const store = configureStore({
     reducer: {

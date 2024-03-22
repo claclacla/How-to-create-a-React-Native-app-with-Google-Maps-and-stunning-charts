@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import { MainScreensList } from './MainScreensList';
+import { MainScreensList } from '../../screensList/MainScreensList';
 
 import Icon from 'react-native-ionicons';
 //import SplashScreen from 'react-native-splash-screen';
