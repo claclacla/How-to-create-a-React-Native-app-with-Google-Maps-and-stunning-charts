@@ -33,6 +33,7 @@ const localStyles = StyleSheet.create({
 });
 */
 
+
 type MapScreenProps = NativeStackScreenProps<MainScreensList, "Map">;
 
 const mainData = [
@@ -66,7 +67,7 @@ const MapScreen: React.FC<MapScreenProps> = (props) => {
         <ScrollView>
             <Section title="Map">
                 <View style={styles.mapContainer}>
-                    <MapView
+                <MapView
                         style={styles.map}
                         region={{
                             latitude: 41.90,
