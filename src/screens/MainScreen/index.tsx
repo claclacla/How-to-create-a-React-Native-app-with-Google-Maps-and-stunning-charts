@@ -7,8 +7,8 @@ import { MainScreensList } from './MainScreensList';
 import Icon from 'react-native-ionicons';
 //import SplashScreen from 'react-native-splash-screen';
 
-import InfoScreen from './screens/InfoScreen';
-import MapScreen from './screens/MapScreen';
+import InfoScreen from '../InfoScreen';
+import MapScreen from '../MapScreen';
 
 const Tab = createBottomTabNavigator<MainScreensList>();
 

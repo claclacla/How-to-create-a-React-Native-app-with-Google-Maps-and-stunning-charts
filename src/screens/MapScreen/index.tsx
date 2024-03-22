@@ -13,13 +13,13 @@ import { NativeStackScreenProps } from '@react-navigation/native-stack';
 
 import { VictoryBar, VictoryChart, VictoryTheme, VictoryPie, VictoryLine } from 'victory-native';
 
-import { MainScreensList } from '../../MainScreensList';
+import { MainScreensList } from '../MainScreen/MainScreensList';
 
-import { IAPILocation, getAPILocations } from '../../../../repositories/api/locations';
-import { ILocalStorageLocation } from '../../../../repositories/localStorage/locations';
-import { mapAPILocationToLocalStorage } from '../../../../repositories/mapAPIToLocalStorage/mapAPILocationToLocalStorage';
+import { IAPILocation, getAPILocations } from '../../repositories/api/locations';
+import { ILocalStorageLocation } from '../../repositories/localStorage/locations';
+import { mapAPILocationToLocalStorage } from '../../repositories/mapAPIToLocalStorage/mapAPILocationToLocalStorage';
 
-import styles from '../../../../styles';
+import styles from '../../styles';
 import Section from '../InfoScreen/Components/Section';
 
 /*
