@@ -8,15 +8,19 @@ export interface ILocalStorageLocation {
 
 const locations: ILocalStorageLocation[] = [];
 
-const locationsSlice = createSlice({
-    name: 'locations',
-    initialState: locations,
+    /*
     reducers: {
         setLocalStorageLocations(state, action) {
             state = action.payload
         },
     }
+    */
+
+const locationsSlice = createSlice({
+    name: 'locations',
+    initialState: locations,
+    reducers: {}
 })
 
-export const { setLocalStorageLocations } = locationsSlice.actions
+//export const { setLocalStorageLocations } = locationsSlice.actions
 export default locationsSlice.reducer

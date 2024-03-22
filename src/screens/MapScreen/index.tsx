@@ -53,13 +53,13 @@ async function getLocalStorageLocations(): Promise<ILocalStorageLocation[]> {
 }
 
 const MapScreen: React.FC<MapScreenProps> = (props) => {
-    const [locations, setLocations] = useState<ILocalStorageLocation[]>([]);
+    const [locations, setLocalStorageLocations] = useState<ILocalStorageLocation[]>([]);
 
     useEffect(() => {
         let localStorageLocations = getLocalStorageLocations();
 
         localStorageLocations.then((localStorageLocations: ILocalStorageLocation[]) => {
-            setLocations(localStorageLocations);
+            setLocalStorageLocations(localStorageLocations);
         });
     }, []);
 
