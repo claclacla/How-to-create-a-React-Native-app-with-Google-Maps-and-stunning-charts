@@ -13,7 +13,7 @@ import {
 
 import styles from '../../styles';
 
-import Section from './Components/Section';
+import Section from './components/Section';
 
 function InfoScreen() {
     return (

@@ -20,7 +20,7 @@ import { ILocalStorageLocation } from '../../repositories/localStorage/locations
 import { mapAPILocationToLocalStorage } from '../../repositories/mapAPIToLocalStorage/mapAPILocationToLocalStorage';
 
 import styles from '../../styles';
-import Section from '../InfoScreen/Components/Section';
+import Section from '../InfoScreen/components/Section';
 
 /*
 import { StyleSheet } from 'react-native';
